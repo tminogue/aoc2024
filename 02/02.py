@@ -1,12 +1,10 @@
 from common import deserialize_input_file
 
-
 input_list = deserialize_input_file("./02_input.txt")
 input_reports = []
 for report in input_list:
     levels = [int(level) for level in report.split(" ")]
     input_reports.append(levels)
-
 
 
 def is_safe_report(report) -> bool:
@@ -20,10 +18,10 @@ def is_safe_report(report) -> bool:
 
         is_report_level_increasing = report[1] > report[0]
 
-        diff = abs(report[idx+1] - report[idx])
-        is_diff_increasing = report[idx+1] > report[idx]
+        diff = abs(report[idx + 1] - report[idx])
+        is_diff_increasing = report[idx + 1] > report[idx]
 
-        if  any(
+        if any(
                 [
                     diff > 3,
                     diff == 0,
@@ -33,7 +31,6 @@ def is_safe_report(report) -> bool:
             return False
 
     return True
-
 
 
 def part1(input_reports):

@@ -4,6 +4,8 @@ from collections import Counter
 input_file_path = "./01_input.txt"
 
 input_list = deserialize_input_file(input_file_path)
+
+
 # print(f"input_list: {input_list}")
 
 def part1(input_list: list[str]) -> int:
@@ -24,6 +26,7 @@ def part1(input_list: list[str]) -> int:
 
     return total_distance
 
+
 def part2(input_list: list[str]) -> int:
     similarity_score = 0
 
@@ -42,7 +45,3 @@ def part2(input_list: list[str]) -> int:
         similarity_score += value * right_counter[value]
 
     return similarity_score
-
-
-
-
